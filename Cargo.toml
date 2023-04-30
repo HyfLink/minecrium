@@ -5,6 +5,7 @@ members = [
     "crates/minecrium_main",
 
     # library crates
+    "crates/minecrium_core",
 ]
 
 
@@ -26,7 +27,7 @@ license-file = "LICENSE.txt"
 # dependencies.proc-macro
 proc-macro2 = { version = "1.0" }
 quote = { version = "1.0" }
-syn = { version = "2.0" }
+syn = { version = "2.0", features = ["full"] }
 # dependencies.other
 bevy = { version = "0.10.0", features = ["dynamic_linking", "serialize"] }
 rand = { version = "0.8", features = ["serde"] }
