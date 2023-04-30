@@ -6,6 +6,10 @@ members = [
 
     # library crates
     "crates/minecrium_core",
+    "crates/minecrium_macro_utils",
+
+    # proc-macro crates
+    "crates/minecrium_core_macros",
 ]
 
 
@@ -32,6 +36,7 @@ syn = { version = "2.0", features = ["full"] }
 bevy = { version = "0.10.0", features = ["dynamic_linking", "serialize"] }
 rand = { version = "0.8", features = ["serde"] }
 serde = { version = "1.0", features = ["derive"] }
+toml_edit = { version = "*" }
 
 
 [workspace.metadata]
