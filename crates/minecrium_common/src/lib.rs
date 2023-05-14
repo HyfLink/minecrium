@@ -3,6 +3,7 @@
 //! # Overview
 //!
 //! - [`coords`] defines the minecrium coordinate system.
+//! - [`dynamic`] defines dynamic operations for trait objects.
 //! - [`errors`] defines error types for the crate.
 //! - [`resource`] resource identifaction and the registry.
 
@@ -11,5 +12,6 @@ pub extern crate cgmath;
 
 // modules
 pub mod coords;
+pub mod dynamic;
 pub mod errors;
 pub mod resource;

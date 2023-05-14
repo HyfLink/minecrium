@@ -7,6 +7,10 @@ members = [
 
     # library crates
     "crates/minecrium_common",
+    "crates/minecrium_macro_utils",
+
+    # proc-macro crates
+    "crates/minecrium_common_macros",
 ]
 
 [workspace.package]
@@ -29,6 +33,7 @@ quote = { version = "1.0.27" }
 syn = { version = "2.0.15", features = ["full"] }
 # dependencies.bevy
 bevy = { version = "0.10.1", features = ["dynamic_linking", "serialize"] }
+bevy_utils = { version = "0.10.1" }
 # dependencies.serde
 serde = { version = "1.0.163", features = ["derive"] }
 serde_json = { version = "1.0.96" }
@@ -36,6 +41,8 @@ serde_json = { version = "1.0.96" }
 rand = { version = "0.8.5", features = ["serde"] }
 cgmath = { version = "0.18.0", features = ["rand", "serde"] }
 indexmap = { version = "1.9.3", features = ["std", "serde"] }
+once_cell = { version = "1.17.1" }
+toml_edit = { version = "0.19.8", features = ["serde"] }
 
 [workspace.metadata]
 

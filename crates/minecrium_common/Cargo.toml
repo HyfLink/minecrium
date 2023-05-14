@@ -9,9 +9,11 @@ repository.workspace = true
 homepage.workspace = true
 
 [dependencies]
-bevy.workspace = true
+bevy_utils.workspace = true
 cgmath.workspace = true
 serde.workspace = true
+
+minecrium_common_macros.path = "../minecrium_common_macros"
 
 [dev-dependencies]
 serde_json.workspace = true

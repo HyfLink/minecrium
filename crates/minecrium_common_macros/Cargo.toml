@@ -1,0 +1,22 @@
+[package]
+name = "minecrium_common_macros"
+description = "proc-macro crate for the `minecrium_common` crate"
+
+authors.workspace = true
+version.workspace = true
+edition.workspace = true
+repository.workspace = true
+homepage.workspace = true
+
+[lib]
+test = false
+doctest = false
+proc-macro = true
+
+[dependencies]
+proc-macro2.workspace = true
+quote.workspace = true
+syn.workspace = true
+
+minecrium_macro_utils.path = "../minecrium_macro_utils"
+

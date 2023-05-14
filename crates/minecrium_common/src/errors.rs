@@ -118,3 +118,31 @@ impl fmt::Display for ResLocationError {
 }
 
 impl StdError for ResLocationError {}
+
+/// An error returned when failing to downcast a trait object to a specific type.
+#[derive(Clone, Debug)]
+pub struct DowncastError {
+    /// the source type name.
+    pub src: &'static str,
+    /// the destination type name.
+    pub dst: &'static str,
+}
+
+impl DowncastError {
+    /// Returns a custom value cast error.
+    pub fn new<Dst: std::any::Any>(src: &'static str) -> Self {
+        Self {
+            src,
+            dst: std::any::type_name::<Dst>(),
+        }
+    }
+}
+
+impl fmt::Display for DowncastError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        let Self { src, dst } = self;
+        write!(f, "try to cast `{src}` to `{dst}`",)
+    }
+}
+
+impl StdError for DowncastError {}

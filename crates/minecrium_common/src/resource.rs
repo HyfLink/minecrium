@@ -21,7 +21,7 @@ use std::ops::{Index, IndexMut};
 use std::str::FromStr;
 use std::sync::Arc;
 
-use bevy::utils::HashMap;
+use bevy_utils::HashMap;
 use serde::{Deserialize, Serialize};
 
 use crate::errors::ResLocationError;
@@ -638,7 +638,7 @@ impl<T> IndexMut<&ResLocation> for Registry<T> {
 
 /// Returns the hash of the value. Used to compute the `ResLocationInner.hash`.
 fn hashes<T: ?Sized + Hash>(value: &T) -> u64 {
-    let builder = bevy::utils::FixedState;
+    let builder = bevy_utils::FixedState;
     let mut hasher = builder.build_hasher();
     value.hash(&mut hasher);
     hasher.finish()
@@ -646,7 +646,7 @@ fn hashes<T: ?Sized + Hash>(value: &T) -> u64 {
 
 /// An iterator that is returned by `Registry::iter`.
 pub struct Iter<'a, T> {
-    iter: bevy::utils::hashbrown::hash_map::Iter<'a, ResLocation, u32>,
+    iter: bevy_utils::hashbrown::hash_map::Iter<'a, ResLocation, u32>,
     slice: &'a [T],
 }
 
@@ -693,7 +693,7 @@ impl<'a, T> FusedIterator for Iter<'a, T> {}
 
 /// An iterator that is returned by `Registry::keys`.
 pub struct Keys<'a, T> {
-    iter: bevy::utils::hashbrown::hash_map::Keys<'a, ResLocation, u32>,
+    iter: bevy_utils::hashbrown::hash_map::Keys<'a, ResLocation, u32>,
     marker: PhantomData<T>,
 }
 
