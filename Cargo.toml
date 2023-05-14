@@ -6,6 +6,7 @@ members = [
     "crates/minecrium_main",
 
     # library crates
+    "crates/minecrium_common",
 ]
 
 [workspace.package]
@@ -22,5 +23,24 @@ license = "Apache-2.0"
 license-file = "LICENSE.txt"
 
 [workspace.dependencies]
+# dependencies.proc-macro
+proc-macro2 = { version = "1.0.56" }
+quote = { version = "1.0.27" }
+syn = { version = "2.0.15", features = ["full"] }
+# dependencies.bevy
+bevy = { version = "0.10.1", features = ["dynamic_linking", "serialize"] }
+# dependencies.serde
+serde = { version = "1.0.163", features = ["derive"] }
+serde_json = { version = "1.0.96" }
+# dependencies.other
+rand = { version = "0.8.5", features = ["serde"] }
+cgmath = { version = "0.18.0", features = ["rand", "serde"] }
+indexmap = { version = "1.9.3", features = ["std", "serde"] }
 
 [workspace.metadata]
+
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 3

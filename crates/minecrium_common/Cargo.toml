@@ -1,0 +1,17 @@
+[package]
+name = "minecrium_common"
+description = "the fundamental crate for the minecrium"
+
+authors.workspace = true
+version.workspace = true
+edition.workspace = true
+repository.workspace = true
+homepage.workspace = true
+
+[dependencies]
+bevy.workspace = true
+cgmath.workspace = true
+serde.workspace = true
+
+[dev-dependencies]
+serde_json.workspace = true
