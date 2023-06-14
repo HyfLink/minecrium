@@ -4,10 +4,14 @@ use std::fmt;
 use std::rc::Rc;
 use std::sync::Arc;
 
+// re-exports
+pub use libcrium_core_macros::{downcast, downcast_sync};
+
 /// Upcasts the trait object to [`dyn Any`](Any).
 ///
 /// The trait is automatically implemented for any `'static` type that implemenets the
 /// [`Any`] trait.
+#[downcast]
 pub trait AsAny: Any {
     /// Returns the [`type name`](any::type_name) as a string slice.
     #[must_use]
@@ -34,6 +38,7 @@ pub trait AsAny: Any {
 ///
 /// This trait is automatically implemented for any `&'static` type that implemenets the
 /// [`Any`], [`Send`], [`Sync`] traits.
+#[downcast_sync]
 pub trait AsAnySync: AsAny + Send + Sync {
     /// Returns the value as [`&(dyn Any + Send + Sync)`](Any).
     #[must_use]

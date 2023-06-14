@@ -7,6 +7,7 @@ members = [
 
     # libcrium crates
     "crates/libcrium_core",
+    "crates/libcrium_core_macros",
 ]
 
 [workspace.package]
@@ -30,7 +31,6 @@ quote = { version = "1.0.27" }
 serde = { version = "1.0.163", features = ["derive"] }
 serde_json = { version = "1.0.96" }
 syn = { version = "2.0.15", features = ["full"] }
-toml_edit = { version = "0.19.10", features = ["serde"] }
 
 [workspace.metadata]
 
