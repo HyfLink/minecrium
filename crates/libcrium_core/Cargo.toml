@@ -12,5 +12,6 @@ homepage.workspace = true
 
 [dependencies]
 bevy.workspace = true
+cgmath.workspace = true
 serde.workspace = true
 libcrium_core_macros.path = "../libcrium_core_macros"
