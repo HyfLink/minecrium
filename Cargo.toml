@@ -6,6 +6,7 @@ members = [
     "crates/minecrium_main",
 
     # libcrium crates
+    "crates/libcrium_core",
 ]
 
 [workspace.package]
