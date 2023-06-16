@@ -8,6 +8,7 @@ members = [
     # libcrium crates
     "crates/libcrium_core",
     "crates/libcrium_core_macros",
+    "crates/libcrium_block",
 ]
 
 [workspace.package]

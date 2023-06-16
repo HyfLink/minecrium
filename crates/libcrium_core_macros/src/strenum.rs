@@ -153,6 +153,7 @@ pub fn expand_strenum(attrs: StrEnumAttrs, input: StrEnumInput) -> TokenStream {
         }
 
         impl #impl_generics #crate_path::strenum::StrEnum for #enum_name #type_generics #where_clause {
+            type FromStrError = <Self as std::str::FromStr>::Err;
             const VALUES: &'static [Self] = &[ #( Self::#variants_ident, )* ];
         }
 
