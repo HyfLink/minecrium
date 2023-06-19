@@ -1,6 +1,6 @@
 [package]
-name = "libcrium_block"
-description = "the minecrium block library"
+name = "libcrium_block_macros"
+description = "the proc-macro crate of libcrium_block"
 authors.workspace = true
 edition.workspace = true
 version.workspace = true
@@ -10,8 +10,10 @@ readme.workspace = true
 repository.workspace = true
 homepage.workspace = true
 
+[lib]
+proc-macro = true
+
 [dependencies]
-bevy.workspace = true
-serde.workspace = true
-libcrium_core.path = "../libcrium_core"
-libcrium_block_macros.path = "../libcrium_block_macros"
+proc-macro2.workspace = true
+quote.workspace = true
+syn.workspace = true

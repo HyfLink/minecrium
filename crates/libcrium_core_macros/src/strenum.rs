@@ -95,7 +95,7 @@ pub fn expand_strenum(attrs: StrEnumAttrs, input: StrEnumInput) -> TokenStream {
     let crate_path = attrs.crate_path.unwrap_or_else(|| Path {
         leading_colon: None,
         segments: Punctuated::from_iter(std::iter::once(PathSegment {
-            ident: Ident::new("libcrium", Span::call_site()),
+            ident: Ident::new("libcrium_core", Span::call_site()),
             arguments: PathArguments::None,
         })),
     });
