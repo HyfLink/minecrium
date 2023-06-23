@@ -1,0 +1,18 @@
+[package]
+name = "libcrium_chunk"
+description = "the minecrium chunk library"
+authors.workspace = true
+edition.workspace = true
+version.workspace = true
+categories.workspace = true
+keywords.workspace = true
+readme.workspace = true
+repository.workspace = true
+homepage.workspace = true
+
+[dependencies]
+bevy.workspace = true
+cgmath.workspace = true
+serde.workspace = true
+libcrium_core.path = "../libcrium_core"
+libcrium_block.path = "../libcrium_block"

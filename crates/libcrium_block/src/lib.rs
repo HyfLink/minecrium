@@ -2,4 +2,5 @@
 
 #![feature(min_specialization)]
 
+pub mod common;
 pub mod property;

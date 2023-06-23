@@ -616,7 +616,7 @@ impl<T: Value> ReflectProperty for Property<T> {
     }
 
     fn dyn_iter(&self) -> Box<dyn Iterator<Item = &'static dyn ReflectValue>> {
-        Box::new(self.iter().map(upcast_value))
+        Box::new(self.iter().map(|value| value as _))
     }
 
     fn dyn_contains(&self, value: &dyn ReflectValue) -> bool {
@@ -624,7 +624,7 @@ impl<T: Value> ReflectProperty for Property<T> {
     }
 
     fn dyn_cast(&self, value: ValueUntyped<'_>) -> Option<&'static dyn ReflectValue> {
-        self.cast(value).map(upcast_value)
+        self.cast(value).map(|value| value as _)
     }
 }
 
@@ -678,16 +678,10 @@ impl<T: Properties> ReflectStateDefinition for StateDefinition<T> {
     }
 
     fn dyn_get(&self, index: u16) -> Option<&dyn ReflectProperties> {
-        self.get(index).map(upcast_state)
+        self.get(index).map(|value| value as _)
     }
 
     fn dyn_find(&self, state: &dyn ReflectProperties) -> Option<u16> {
         self.find(state.downcast_ref()?)
     }
 }
-
-#[rustfmt::skip] #[inline(always)]
-fn upcast_value<T: Value>(value: &T) -> &dyn ReflectValue { value }
-
-#[rustfmt::skip] #[inline(always)]
-fn upcast_state<T: Properties>(state: &T) -> &dyn ReflectProperties { state }
