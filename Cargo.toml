@@ -1,17 +1,17 @@
 [workspace]
+
 resolver = "2"
 members = [
     # binary crates
     "crates/minecrium_main",
 
-    # library crates
-    "crates/minecrium_core",
-    "crates/minecrium_macro_utils",
-
-    # proc-macro crates
-    "crates/minecrium_core_macros",
+    # libcrium crates
+    "crates/libcrium_core",
+    "crates/libcrium_core_macros",
+    "crates/libcrium_block",
+    "crates/libcrium_block_macros",
+    "crates/libcrium_chunk",
 ]
-
 
 [workspace.package]
 authors = ["HYF"]
@@ -26,17 +26,19 @@ homepage = "https://github.com/HyfLink/minecrium"
 license = "Apache-2.0"
 license-file = "LICENSE.txt"
 
-
 [workspace.dependencies]
-# dependencies.proc-macro
-proc-macro2 = { version = "1.0" }
-quote = { version = "1.0" }
-syn = { version = "2.0", features = ["full"] }
-# dependencies.other
-bevy = { version = "0.10.0", features = ["dynamic_linking", "serialize"] }
-rand = { version = "0.8", features = ["serde"] }
-serde = { version = "1.0", features = ["derive"] }
-toml_edit = { version = "*" }
-
+bevy = { version = "0.10.1", features = ["dynamic_linking", "serialize"] }
+cgmath = { version = "0.18.0", features = ["serde"] }
+proc-macro2 = { version = "1.0.60" }
+quote = { version = "1.0.28" }
+serde = { version = "1.0.164", features = ["derive"] }
+serde_json = { version = "1.0.97" }
+syn = { version = "2.0.18", features = ["full"] }
 
 [workspace.metadata]
+
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 3

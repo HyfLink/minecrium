@@ -1,6 +1,6 @@
 [package]
-name = "minecrium_main"
-description = "the minecrium executable"
+name = "libcrium_block"
+description = "the minecrium block library"
 authors.workspace = true
 edition.workspace = true
 version.workspace = true
@@ -11,3 +11,7 @@ repository.workspace = true
 homepage.workspace = true
 
 [dependencies]
+bevy.workspace = true
+serde.workspace = true
+libcrium_core.path = "../libcrium_core"
+libcrium_block_macros.path = "../libcrium_block_macros"

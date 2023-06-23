@@ -1,6 +1,6 @@
 [package]
-name = "minecrium_main"
-description = "the minecrium executable"
+name = "libcrium_core_macros"
+description = "the proc-macro crate of libcrium_core"
 authors.workspace = true
 edition.workspace = true
 version.workspace = true
@@ -10,4 +10,10 @@ readme.workspace = true
 repository.workspace = true
 homepage.workspace = true
 
+[lib]
+proc-macro = true
+
 [dependencies]
+proc-macro2.workspace = true
+quote.workspace = true
+syn.workspace = true
